@@ -23,3 +23,7 @@ $router->group(['prefix' => 'api/v1'], function($router) {
     $router->delete('car/{id}', 'CarController@destroy');
     $router->get('car', 'CarController@index');
 });
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->post('register', 'AuthController@register');
+});
